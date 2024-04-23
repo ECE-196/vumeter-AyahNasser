@@ -13,24 +13,49 @@ led_pins = [
     board.IO21,
     board.IO26, # type: ignore
     board.IO47,
+    board.IO33,
+    board.IO34,
+    board.IO48,
+    board.IO35,
+    board.IO36,
+    board.IO37,
+    board.IO38,
+    board.IO39,
+
     # do the rest...
 ]
 
 leds = [DigitalInOut(pin) for pin in led_pins]
-
 for led in leds:
     led.direction = Direction.OUTPUT
 
-# main loop
+
 while True:
     volume = microphone.value
+    for i, led in enumerate(leds):
+        print(volume)
 
-    print(volume)
+        j = volume*len(leds)//49574
 
-    leds[0].value = not leds[0].value
-    leds[1].value = not leds[0].value
+        print(j)
+        if i < j:
+            led.value = True
+        else:
+            led.value = False
+    sleep(0.2) 
 
-    sleep(1)
+    #leds[3].value = not leds[0].value
+
+
+#main loop
+#while True:
+    #volume = microphone.value
+
+    #print(volume)
+
+    #leds[0].value = not leds[0].value
+    #leds[1].value = not leds[0].value
+
 
     # instead of blinking,
     # how can you make the LEDs
