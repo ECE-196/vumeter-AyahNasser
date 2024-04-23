@@ -14,4 +14,3 @@ Changed the code in the code.py to main.py and changed the code inside the file 
 
 ### Removed
 Removed the components from the bag to attach them to the board. 
-...

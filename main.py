@@ -25,6 +25,10 @@ led_pins = [
     # do the rest...
 ]
 
+
+
+
+
 leds = [DigitalInOut(pin) for pin in led_pins]
 for led in leds:
     led.direction = Direction.OUTPUT
